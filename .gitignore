@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Database (実店舗のデータを GitHub 上にアップロードしないため)
+*.db
+*.db-journal
+backups/
+
+# 環境ごとの設定・秘密情報
+.env
+
+# エディタ・OS
+.vscode/
+.DS_Store
+Thumbs.db
