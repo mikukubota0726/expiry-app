@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>賞味期限チェック</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="app-header">
+            <a href="index.html" class="app-title">賞味期限チェック</a>
+            <!-- ログイン状態の表示場所 -->
+            <div id="auth-area" class="auth-area"></div>
+        </header>
+
+        <main class="acontainer">
+            <form class="search-from" action="products.html" method="get">
+                <input type="search" name="q" placeholder="商品名・通路で検索" aria-label="検索キーワード">
+                <button type="submit" class="btn">検索</button>
+            </form>
+
+            <a href="expiring.html" class="expiring-banner" id="expiring-banner">
+                <span class="expiring-banner-title">期限間近の商品を確認する</span>
+                <span class="expiring-banner-summary" id="expiring-summary">⚫期限切れ 1 🔴期限間近 2 🟠期限接近 3 🟡注意 4</span>
+            </a>
+
+            <section>
+                <h2 class="section-title">通路から探す</h2>
+                <div class="aisle-grid" id="aisle-grid">
+                    <a class="aisle-button" href="products.html?aisle_id=1">
+                        <span class="aisle-name">1番通路</span>
+                        <small>3件</small>
+                    </a>
+                    <a class="aisle-button" href="products.html?aisle_id=2">
+                        <span class="aisle-name">2番通路</span>
+                        <small>5件</small>
+                    </a>
+                    <a class="aisle-button" href="products.html?aisle_id=3">
+                        <span class="aisle-name">3番通路</span>
+                        <small>2件</small>
+                    </a>
+                    <a class="aisle-button" href="products.html?aisle_id=4">
+                        <span class="aisle-name">4番通路</span>
+                        <small></small>
+                    </a>
+                </div>
+            </section>
+
+            <div class="stack">
+                <a href="products.html" class="btn btn-secondary btn-block">全商品一覧</a>
+                <a href="form.html" class="btn btn-primary btn-block">＋ 商品を登録</a>
+            </div>
+        </main>
+    </body>
+    </html>
