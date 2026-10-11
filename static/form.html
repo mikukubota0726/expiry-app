@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>商品の登録・編集 | 賞味期限チェック</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header class="app-header">
+            <a href="index.html" class="app-title">賞味期限チェック</a>
+            <div id="auth-area" class="auth-area"></div>
+        </header>
+
+        <main class="container">
+            <h1 class="page-title" id="page-title">商品を登録</h1>
+
+            <form id="product-form" class="form">
+                <label class="field">
+                    <span class="field-label">商品名 <span class="required">必須</span></span>
+                    <input type="text" name="name" required maxlength="100" autocomplete="off">
+                </label>
+
+                <label class="field">
+                    <span class="field-label">通路<span class="required">必須</span></span>
+                    <select name="aisle_id" id="aisle-select" required>
+                        <option value="">選択してください</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span class="field-label">最短賞味期限 <span class="required">必須</span></span>
+                    <input type="date" name="expiry_date" required>
+                </label>
+
+                <label class="field">
+                    <span class="field-label">数量 <span class="required">必須</span></span>
+                    <input type="number" name="quantity" required min="0" step="1" inputmode="numeric">
+                </label>
+
+                <label class="field">
+                    <span class="field-label">備考</span>
+                    <input type="text" name="note" maxlength="200" placeholder="例：エンド、棚上、冷蔵ケース左" autocomplete="off">
+                </label>
+
+                <label class="field">
+                    <span class="field-label">JANコード（任意）</span>
+                    <input type="text" name="jan" inputmode="numeric" pattern="[0-9]{8}|[0-9]{13}" placeholder="8桁または13桁の数字" autocomplete="off">
+                </label>
+
+                <p class="form-error" id="form-error" role="alert"></p>
+
+                <div class="stack">
+                    <button type="submit" class="btn btn-primary btn-block" id="submit-button">保存する</button>
+                    <a href="index.html" class="btn btn-secondary btn-block" id="cancel-link">キャンセル</a>
+                </div>
+            </form>
+
+            <section class="danger-zone" id="danger-zone" hidden>
+                <h2 class="section-title">商品の削除</h2>
+                <p class="muted">売場から商品がなくなった場合に削除します。元に戻せません。</p>
+                <button type="button" class="btn btn-danger btn-block" id="delete-button">この商品を削除する</button>
+            </section>
+        </main>
+    </body>
+</html>

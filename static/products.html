@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title>商品一覧 | 賞味期限チェック</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <header css="app-header">
+            <a href="index.html" class="app-title">賞味期限チェック</a>
+            <div id="auth-area" class="auth-area"></div>
+        </header>
+
+        <main class="container">
+            <h1 class="page-title" id="page-title">商品一覧</h1>
+
+            <form class="search-form" action="products.html" method="get">
+                <input type="search" name="q" id="search-input" placeholder="商品名・通路で検索" aria-label="検索キーワード">
+                <button type="submit" class="btn">検索</button>
+            </form>
+
+            <div class="toolbar">
+                <span id="result-count">2件</span>
+                <label>
+                    並び順
+                    <select id="sort-select">
+                        <option value="asc">期限が近い順</option>
+                        <option value="desc">期限が遠い順</option>
+                    </select>
+                </label>
+            </div>
+
+            <a href="form.html" class="btn btn-primary btn-block" id="add-link">＋ 商品を登録</a>
+
+            <div class="product-list" id="product-list">
+                <aritcle class="product-card level-expired">
+                    <div class="product-card-header">
+                        <h3 class="product-name">牛乳A</h3>
+                        <span class="badge">⚫ 期限切れ</span>
+                    </div>
+                    <p class="product-expiry">賞味期限 2026/09/29（1日超過）</p>
+                    <p class="product-info">📍 3番通路 数量 2個</p>
+                    <p class="product-info">📝 冷蔵ケース左</p>
+                    <div class="product-card-footer">
+                        <span class="product-updated">更新：田中 2026/09/01 14:30</span>
+                        <a class="btn btn-small" href="form.html?id=1">編集</a>
+                    </div>
+                </aritcle>
+
+                <article class="product-card level-warning">
+                    <div class="product-card-header">
+                        <h3 class="product-name">豆腐C</h3>
+                        <span class="badge">🟠 期限接近</span>
+                    </div>
+                    <p class="product-expiry">賞味期限 2026/10/10（あと10日）</p>
+                    <p class="product-info">📍 3番通路 数量 8個</p>
+                    <div class="product-card-footer">
+                        <span class="product-updated">更新：佐藤 2026/09/01 15:02</span>
+                        <a class="btn btn-small" href="form.html?id=3">編集</a>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </body>
+</html>
